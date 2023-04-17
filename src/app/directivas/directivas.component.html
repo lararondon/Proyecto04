@@ -1,0 +1,37 @@
+<p><b>ngIf</b></p>
+Introduce tu nota: <input type="number" [(ngModel)]="nota">
+<p *ngIf="nota>=5">APROBADO</p>
+
+<p><b>ngFor</b></p>
+<ul *ngFor="let ciudad of ciudades">
+    <li>{{ciudad}}</li>
+</ul>
+
+<p><b>ngSwitch</b></p>
+Valor 1: <input [(ngModel)]="valor1" type="number">
+Valor 2: <input [(ngModel)]="valor2" type="number">
+<select [(ngModel)]="operacion">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="x">x</option>
+    <option value="/">/</option>
+</select>
+<p>Resultado:
+    <span [ngSwitch]="operacion">
+      <span *ngSwitchCase="'+'">{{valor1+valor2}}</span>
+      <span *ngSwitchCase="'-'">{{valor1-valor2}}</span>
+      <span *ngSwitchCase="'x'">{{valor1*valor2}}</span>
+      <span *ngSwitchCase="'/'">{{valor1/valor2}}</span>
+    </span>
+  </p>
+
+  <p><b>ngTemplate</b></p>
+
+  <ng-template #saludo>
+    <ul >
+      <li *ngFor="let saludo of saludos">{{saludo}}</li>
+    </ul>
+  </ng-template>
+
+  <ng-container *ngTemplateOutlet="saludo"></ng-container>
+ 

@@ -1,0 +1,11 @@
+<h4>PADRE - HIJO</h4>
+<div>
+    Nombre: <input type="text" [(ngModel)]="nombre">
+    Apellidos:<input type="text" [(ngModel)]="apellidos">
+    Cedula:<input type="number" [(ngModel)]="cedula">
+    <button (click)="agregarDoctor()">Enviar</button>
+</div><br>
+<app-hijo1 [doctor]="doctor"></app-hijo1>
+
+
+
